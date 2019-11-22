@@ -10,4 +10,5 @@
     <dimen name="big_size">25sp</dimen>
     <dimen name="TitleTextSize">25dp</dimen>
     <dimen name="centralInfoTextSize">45dp</dimen>
+    <dimen name="priceTextSize">30dp</dimen>
 </resources>

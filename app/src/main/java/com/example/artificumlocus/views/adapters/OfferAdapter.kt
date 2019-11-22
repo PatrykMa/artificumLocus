@@ -42,6 +42,7 @@ class OfferAdapter : ListAdapter<Offer, OfferAdapter.ViewHolder>(OfferDiffCallba
             binding.apply {
                 cardViewMain.setOnClickListener(listener)
                 offer = item
+                imageView.setImageBitmap(item.bitmap)
                 executePendingBindings()
 
 

@@ -7,6 +7,6 @@ object InjectorUtils {
 
 
     fun provideOfferListViewModelFactory(context: Context): OffersViewModelFactory {
-        return OffersViewModelFactory()
+        return OffersViewModelFactory(context)
     }
 }

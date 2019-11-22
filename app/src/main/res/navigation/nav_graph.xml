@@ -5,5 +5,5 @@
             app:startDestination="@id/offertList">
 
     <fragment android:id="@+id/offertList" android:name="com.example.artificumlocus.OfferList"
-              android:label="fragment_offert_list" tools:layout="@layout/fragment_offert_list"/>
+              android:label="Oferty" tools:layout="@layout/fragment_offert_list"/>
 </navigation>

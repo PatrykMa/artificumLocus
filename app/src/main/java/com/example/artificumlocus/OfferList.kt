@@ -10,9 +10,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import com.example.artificumlocus.databinding.FragmentOffertListBinding
+import com.example.artificumlocus.models.data.Address
 import com.example.artificumlocus.models.models.OfferListViewModel
 import com.example.artificumlocus.models.utilites.InjectorUtils
 import com.example.artificumlocus.views.adapters.OfferAdapter
+import androidx.recyclerview.widget.RecyclerView
+
+import android.view.animation.AnimationUtils
+import android.view.animation.AnimationUtils.loadAnimation
+
+
 
 
 class OfferList : Fragment() {
@@ -20,7 +27,7 @@ class OfferList : Fragment() {
         InjectorUtils.provideOfferListViewModelFactory(requireContext())
     }
     lateinit var binding : FragmentOffertListBinding
-
+    private var checkScrollingUp = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +46,11 @@ class OfferList : Fragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.update(Address())
+    }
+
     private fun subscribeUi(adapter: OfferAdapter) {
         viewModel.offers.observe(viewLifecycleOwner) { offers ->
             /**
@@ -54,6 +66,8 @@ class OfferList : Fragment() {
                 binding.textViewWhenEmpty.visibility =View.GONE
             }
         }
+
     }
+
 
 }
