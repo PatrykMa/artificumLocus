@@ -5,7 +5,7 @@
 >
 
     <item
-            android:id="@+id/offertList"
+            android:id="@+id/searchActivity"
             android:icon="@drawable/ic_shopping_cart_24px"
             android:title="Oferty" />
     <item android:title="Konto">
@@ -26,7 +26,8 @@
                 <item
                         android:id="@+id/mySalesFragment"
                         android:icon="@drawable/ic_import_contacts_24px"
-                        android:title="Wystawione" />
+                        android:title="Wystawione"
+                android:visible="false"/>
             </group>
         </menu>
     </item>

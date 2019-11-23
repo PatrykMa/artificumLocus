@@ -15,6 +15,7 @@ import com.example.artificumlocus.databinding.FragmentAddOffertBinding
 import com.example.artificumlocus.databinding.FragmentChatBinding
 import com.example.artificumlocus.models.models.ChatViewModel
 import com.example.artificumlocus.models.utilites.InjectorUtils
+import com.example.artificumlocus.services.MyIdProvider
 import com.example.artificumlocus.views.adapters.MessageAdapter
 import com.example.artificumlocus.views.adapters.OfferAdapter
 
@@ -34,7 +35,7 @@ class ChatFragment : Fragment() {
         binding = FragmentChatBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
-        val adapter = MessageAdapter()
+        val adapter = MessageAdapter(MyIdProvider.id)
         binding.recycleDeparture.adapter = adapter
         subscribeUi(adapter)
         viewModel.setUsersId(args.myId,args.otherId)

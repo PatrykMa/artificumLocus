@@ -18,26 +18,51 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.artificumlocus.R
 import com.example.artificumlocus.databinding.MyMessageBinding
+import com.example.artificumlocus.databinding.TheirMessageBinding
 import com.example.artificumlocus.models.data.Message
 
 
-class MessageAdapter : ListAdapter<Message, MessageAdapter.ViewHolder>(OfferDiffCallback()){
+class MessageAdapter(var userID:Int) : ListAdapter<Message, RecyclerView.ViewHolder>(OfferDiffCallback()){
 
+    override fun getItemViewType(position: Int): Int {
+        if(getItem(position).fromUserId == userID)
+            return 1
+        return 2
+    }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val departure = getItem(position)
-        holder.apply {
-            bind(departure)
-            itemView.tag = departure
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val item = getItem(position)
+        if(holder is ViewHolder2)
+        {
+            holder.apply { bind(item) }
+        }
+        if(holder is ViewHolder)
+        {
+            holder.apply { bind(item) }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(MyMessageBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        if(viewType== 1 )// moja
+        {
+            return ViewHolder(MyMessageBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        }
+        return ViewHolder2(TheirMessageBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
 
+
     class ViewHolder(private val binding: MyMessageBinding): RecyclerView.ViewHolder(binding.root)
+    {
+
+        fun bind(item:Message)
+        {
+            binding.apply {
+                content = item.content
+            }
+        }
+    }
+    class ViewHolder2(private val binding: TheirMessageBinding): RecyclerView.ViewHolder(binding.root)
     {
 
         fun bind(item:Message)

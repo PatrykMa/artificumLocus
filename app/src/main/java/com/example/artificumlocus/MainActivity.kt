@@ -2,6 +2,7 @@ package com.example.artificumlocus
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
@@ -46,6 +47,11 @@ class MainActivity : AppCompatActivity()
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
@@ -58,4 +64,6 @@ class MainActivity : AppCompatActivity()
             super.onBackPressed()
         }
     }
+
+
 }
