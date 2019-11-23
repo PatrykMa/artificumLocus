@@ -15,6 +15,7 @@ class OfferListViewModel internal constructor(val provider:OffersProvider) :View
     private fun t(data:List<Offer>) = data
     private val _offer: MutableLiveData<List<Offer>> = MutableLiveData<List<Offer>>()
     val offers: LiveData<List<Offer>> = provider.offers
+
     fun update(address: Address){
         provider.update(address)
     }

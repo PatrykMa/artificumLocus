@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.artificumlocus.OfferListDirections
+import com.example.artificumlocus.R
 import com.example.artificumlocus.databinding.ListItemOfferBinding
 import com.example.artificumlocus.models.data.Offer
+import org.jetbrains.anko.bundleOf
 
 class OfferAdapter : ListAdapter<Offer, OfferAdapter.ViewHolder>(OfferDiffCallback()){
 
@@ -30,8 +32,9 @@ class OfferAdapter : ListAdapter<Offer, OfferAdapter.ViewHolder>(OfferDiffCallba
     private fun createOnClickListener(offer: Offer): View.OnClickListener
     {
         return View.OnClickListener {
-            val direction = OfferListDirections.actionOffertListToDetailedOfferFragment(offer.id!!)
-            it.findNavController().navigate(direction)
+            var bundle = bundleOf("offertId" to offer.id!!)
+            //val direction = OfferListDirections.actionOffertListToDetailedOfferFragment(offer.id!!,bundle)
+            it.findNavController().navigate(R.id.action_global_detailedOfferFragment,bundle)
         }
     }
 

@@ -19,6 +19,9 @@
               android:label="Ingormacje">
         <argument android:name="offertId" app:argType="integer"/>
         <action android:id="@+id/action_detailedOfferFragment_to_chatFragment" app:destination="@id/chatFragment"/>
+
+
+
     </fragment>
     <fragment android:id="@+id/chatFragment" android:name="com.example.artificumlocus.views.ChatFragment"
               android:label="ChatFragment">
@@ -29,4 +32,9 @@
               android:label="GroupChatFragment">
         <action android:id="@+id/action_groupChatFragment_to_chatFragment" app:destination="@id/chatFragment"/>
     </fragment>
+    <fragment android:id="@+id/observedOfferFragment"
+              android:name="com.example.artificumlocus.views.ObservedOfferFragment"
+              android:label="ObservedOfferFragment"/>
+    <fragment android:id="@+id/mySalesFragment" android:name="com.example.artificumlocus.views.MySalesFragment"
+              android:label="MySalesFragment"/><action android:id="@+id/action_global_detailedOfferFragment" app:destination="@id/detailedOfferFragment"/>
 </navigation>

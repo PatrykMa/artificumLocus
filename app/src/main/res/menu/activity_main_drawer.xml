@@ -12,7 +12,7 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                        android:id="@+id/nav_camera"
+                        android:id="@+id/observedOfferFragment"
                         android:icon="@drawable/ic_visibility_24px"
                         android:title="Obserwowane" />
                 <item
@@ -24,7 +24,7 @@
                         android:icon="@drawable/ic_playlist_add_24px"
                         android:title="Dodaj Produkt" />
                 <item
-                        android:id="@+id/nav_myProduct"
+                        android:id="@+id/mySalesFragment"
                         android:icon="@drawable/ic_import_contacts_24px"
                         android:title="Wystawione" />
             </group>
