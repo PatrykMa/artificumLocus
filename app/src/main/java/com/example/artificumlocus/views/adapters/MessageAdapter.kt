@@ -6,7 +6,6 @@ import android.widget.TextView
 import android.app.Activity
 import android.content.Context
 import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 
 import android.view.LayoutInflater
@@ -14,7 +13,6 @@ import android.view.View
 import android.view.ViewGroup
 
 import android.widget.BaseAdapter
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -23,7 +21,7 @@ import com.example.artificumlocus.databinding.MyMessageBinding
 import com.example.artificumlocus.models.data.Message
 
 
-class MessageAdapter(var baseUserid:Int) : ListAdapter<Message, MessageAdapter.ViewHolder>(OfferDiffCallback()){
+class MessageAdapter : ListAdapter<Message, MessageAdapter.ViewHolder>(OfferDiffCallback()){
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -38,14 +36,14 @@ class MessageAdapter(var baseUserid:Int) : ListAdapter<Message, MessageAdapter.V
         return ViewHolder(MyMessageBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
-    inner class ViewHolder(private val binding: MyMessageBinding): RecyclerView.ViewHolder(binding.root)
+
+    class ViewHolder(private val binding: MyMessageBinding): RecyclerView.ViewHolder(binding.root)
     {
 
         fun bind(item:Message)
         {
             binding.apply {
                 content = item.content
-
             }
         }
     }

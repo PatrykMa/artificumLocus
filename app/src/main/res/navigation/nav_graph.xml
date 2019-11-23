@@ -25,4 +25,8 @@
         <argument android:name="myId" app:argType="integer"/>
         <argument android:name="otherId" app:argType="integer"/>
     </fragment>
+    <fragment android:id="@+id/groupChatFragment" android:name="com.example.artificumlocus.views.GroupChatFragment"
+              android:label="GroupChatFragment">
+        <action android:id="@+id/action_groupChatFragment_to_chatFragment" app:destination="@id/chatFragment"/>
+    </fragment>
 </navigation>

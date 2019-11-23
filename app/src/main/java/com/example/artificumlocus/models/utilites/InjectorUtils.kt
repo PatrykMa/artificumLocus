@@ -3,6 +3,7 @@ package com.example.artificumlocus.models.utilites
 import android.content.Context
 import com.example.artificumlocus.models.ViewModelFactorys.ChatViewModelFactory
 import com.example.artificumlocus.models.ViewModelFactorys.DetailedOfferViewModelFactory
+import com.example.artificumlocus.models.ViewModelFactorys.GroupChatViewModelFactory
 import com.example.artificumlocus.models.ViewModelFactorys.OffersViewModelFactory
 
 object InjectorUtils {
@@ -16,5 +17,8 @@ object InjectorUtils {
     }
     fun provideChatViewModelFactory(context: Context): ChatViewModelFactory {
         return ChatViewModelFactory(context)
+    }
+    fun provideGroupChatViewModelFactory(context: Context): GroupChatViewModelFactory {
+        return GroupChatViewModelFactory(context)
     }
 }

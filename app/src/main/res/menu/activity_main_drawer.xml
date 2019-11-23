@@ -16,7 +16,7 @@
                         android:icon="@drawable/ic_visibility_24px"
                         android:title="Obserwowane" />
                 <item
-                        android:id="@+id/nav_message"
+                        android:id="@+id/groupChatFragment"
                         android:icon="@drawable/ic_message_24px"
                         android:title="wiadmości" />
                 <item
