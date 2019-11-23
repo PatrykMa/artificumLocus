@@ -15,7 +15,7 @@
 
             <ImageView
                     android:layout_width="120dp"
-                    android:layout_height="120dp" app:srcCompat="@drawable/apple"
+                    android:layout_height="120dp" app:srcCompat="@drawable/ic_lock"
                     android:id="@+id/imageView2" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="8dp"
@@ -68,7 +68,7 @@
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:clickable="true" app:srcCompat="@drawable/ic_lock"
+                    android:clickable="true" app:srcCompat="@android:drawable/ic_input_add"
                     android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
                     android:id="@+id/floatingActionButton_add" app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>

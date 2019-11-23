@@ -11,7 +11,7 @@ import java.util.*
 
 class OfferListViewModel internal constructor(val provider:OffersProvider) :ViewModel() {
 
-    //todo check ho to do it better
+
     private fun t(data:List<Offer>) = data
     private val _offer: MutableLiveData<List<Offer>> = MutableLiveData<List<Offer>>()
     val offers: LiveData<List<Offer>> = provider.offers

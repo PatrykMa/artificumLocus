@@ -4,9 +4,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.artificumlocus.OfferListDirections
 import com.example.artificumlocus.databinding.ListItemOfferBinding
 import com.example.artificumlocus.models.data.Offer
 
@@ -28,9 +30,8 @@ class OfferAdapter : ListAdapter<Offer, OfferAdapter.ViewHolder>(OfferDiffCallba
     private fun createOnClickListener(offer: Offer): View.OnClickListener
     {
         return View.OnClickListener {
-            Log.d("toDO","implement on click offer")
-            //val direction = DepartureFragmentDirections.actionDepartureFragmentToDepartureOptionsDialog(departure.id!!,departure.plate!!)
-            //it.findNavController().navigate(direction)
+            val direction = OfferListDirections.actionOffertListToDetailedOfferFragment(offer.id!!)
+            it.findNavController().navigate(direction)
         }
     }
 

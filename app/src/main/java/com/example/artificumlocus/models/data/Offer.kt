@@ -9,4 +9,5 @@ class Offer {
     var title= ""
     var description = ""
     var price = 0
+    var address:Address = Address()
 }
