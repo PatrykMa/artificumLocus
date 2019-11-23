@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.artificumlocus.databinding.FragmentDetailedOfferBinding
 import com.example.artificumlocus.models.models.DetailedOfferViewModel
@@ -18,7 +19,6 @@ class DetailedOfferFragment:Fragment() {
         InjectorUtils.provideDetailedOfferViewModelFactory(requireContext())
     }
     lateinit var binding : FragmentDetailedOfferBinding
-    private var checkScrollingUp = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +27,11 @@ class DetailedOfferFragment:Fragment() {
 
         binding = FragmentDetailedOfferBinding.inflate(inflater, container, false)
         context ?: return binding.root
+        binding.materialUnelevatedButtonSend.setOnClickListener {
+            //todo ids
+            val direction = DetailedOfferFragmentDirections.actionDetailedOfferFragmentToChatFragment(0,1)
+            it.findNavController().navigate(direction)
+        }
         viewModel.setID(args.offertId)
         setHasOptionsMenu(true)
         subscribeUi()

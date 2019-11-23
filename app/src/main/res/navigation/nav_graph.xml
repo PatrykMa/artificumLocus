@@ -18,5 +18,11 @@
               android:name="com.example.artificumlocus.views.DetailedOfferFragment"
               android:label="Ingormacje">
         <argument android:name="offertId" app:argType="integer"/>
+        <action android:id="@+id/action_detailedOfferFragment_to_chatFragment" app:destination="@id/chatFragment"/>
+    </fragment>
+    <fragment android:id="@+id/chatFragment" android:name="com.example.artificumlocus.views.ChatFragment"
+              android:label="ChatFragment">
+        <argument android:name="myId" app:argType="integer"/>
+        <argument android:name="otherId" app:argType="integer"/>
     </fragment>
 </navigation>

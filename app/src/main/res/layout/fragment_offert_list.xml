@@ -60,7 +60,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.button.MaterialButton
-                        android:id="@+id/material_unelevated_button"
+                        android:id="@+id/material_unelevated_button_send"
                         style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
