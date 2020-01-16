@@ -13,18 +13,18 @@ import com.example.artificumlocus.models.data.User
 class OffersProvider(val context: Context) {
     var bit = BitmapFactory.decodeResource(context.resources, R.drawable.apple)
     private val _address = Address().apply { state= "śląskie";cityName="Gliwice"; street = "toszewska" }
-    private val _content = "bardzo długi opis  z wieloma zagadnieniami i zdaniami współdzielnie złozonymi lorem ipsum etn nocet titus in provincja habiatat procul a roma titus incola privincjia est"
+    private val _content = "Piękne czerwona jabka z przydomowego sadu. Do samodzielnego zbrania"
     private var offerList = listOf<Offer>(
-        Offer().apply { description = _content;address = _address; id =1;title = "tytuł1";price = 153; bitmap = bit},
-        Offer().apply { description = _content;address = _address; id =2;title = "tytuł2";price = 196; bitmap = bit}
+        Offer().apply { description = _content;address = _address; id =1;title = "Jabłka";price = 153; bitmap = bit},
+        Offer().apply { description = _content;address = _address; id =2;title = "Wędliny";price = 196; bitmap = BitmapFactory.decodeResource(context.resources, R.drawable.s2ham)}
     )
 
     private val chatGroupList = listOf<Pair<Offer,User>>(Pair(Offer().apply { description = _content;address = _address; id =1;title = "tytuł1";price = 153; bitmap = bit},
-        User().apply { nick = "gieniek" }))
+        User().apply { nick = "Stanisław" }))
 
-    private var chatList = listOf<Message>(Message().apply { fromUserId = 0; toUserId = 1; content = "dzień Dybry" },
-    Message().apply { fromUserId = 1; toUserId = 0; content = "dzień Dybry" },
-        Message().apply { fromUserId = 0; toUserId = 1; content = "są jeszcze" },
+    private var chatList = listOf<Message>(Message().apply { fromUserId = 0; toUserId = 1; content = "Dzień dobry" },
+    Message().apply { fromUserId = 1; toUserId = 0; content = "Dzień Dobry" },
+        Message().apply { fromUserId = 0; toUserId = 1; content = "Ma pan jeszcze ser" },
         Message().apply { fromUserId = 1; toUserId = 0; content = "nie" })
     private val _offers: MutableLiveData<List<Offer>> = MutableLiveData<List<Offer>>()
     private val _offer: MutableLiveData<Offer> = MutableLiveData<Offer>()

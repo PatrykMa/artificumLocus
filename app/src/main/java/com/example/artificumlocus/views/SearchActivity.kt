@@ -12,17 +12,20 @@ import kotlinx.android.synthetic.main.activity_serch.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
+import androidx.navigation.NavController
 import com.example.artificumlocus.databinding.ActivitySerchBinding
+import com.example.artificumlocus.models.data.Address
 import com.example.artificumlocus.models.models.OfferListViewModel
 import com.example.artificumlocus.models.utilites.InjectorUtils
 import com.example.artificumlocus.views.adapters.OfferAdapter
+import androidx.navigation.findNavController
 
 
 class SearchActivity : AppCompatActivity() {
     private val viewModel: OfferListViewModel by viewModels {
         InjectorUtils.provideOfferListViewModelFactory(this)
     }
-
+    private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<ActivitySerchBinding>(this, R.layout.activity_serch)
@@ -35,6 +38,10 @@ class SearchActivity : AppCompatActivity() {
             }
 
         }
+
+        viewModel.update(Address())
+        //navController = findNavController(R.id.mainSpace_nav_fragment)
+
     }
 
 }

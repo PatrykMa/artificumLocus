@@ -16,7 +16,7 @@
     </fragment>
     <fragment android:id="@+id/detailedOfferFragment"
               android:name="com.example.artificumlocus.views.DetailedOfferFragment"
-              android:label="Ingormacje">
+              android:label="Informacje">
         <argument android:name="offertId" app:argType="integer"/>
         <action android:id="@+id/action_detailedOfferFragment_to_chatFragment" app:destination="@id/chatFragment"/>
 
